@@ -57,7 +57,7 @@ public class DirectorySelectionUI
         titleLabel.setFont(new Font(50.0d));
         
         _backgroundPane.setTop(titleLabel);
-        _backgroundPane.setAlignment(_backgroundPane.getTop(), Pos.CENTER);
+        BorderPane.setAlignment(titleLabel, Pos.CENTER);
         _backgroundPane.setCenter(new Label("Please choose a data directory."));
         _backgroundPane.setCenter(_chooseDirectory);
     }

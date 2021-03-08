@@ -12,8 +12,9 @@ public class SpamDetectionApp extends Application
 	public void start(Stage stage) throws Exception 
 	{
 		Pane pane = new Pane();
-		DirectorySelectionUI firstScreen = new DirectorySelectionUI(stage, pane);
-		// SpamDisplayUI secondScreen = new SpamDisplayUI("./Data");
+
+		//Auto adds itself to pane and uses stage to set up directory selector
+		new DirectorySelectionUI(stage, pane);
 
 		//Root child is the pane so we can resize everything
         Scene scene = new Scene(pane, 640, 180);
