@@ -2,26 +2,19 @@ package csci2020u.assignment1;
 
 import java.util.*;
 
-import javafx.geometry.Pos;
 import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.Border;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.RowConstraints;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
-import javafx.scene.text.Text;
 
 public class SpamDisplayUI 
 {
-
     //The main panel for the spam display
-    private BorderPane _backgroundGrid;
+    private BorderPane _backgroundPane;
 
     //Spam filter scrolling
     private Pane _spamFilterPane;
@@ -40,7 +33,7 @@ public class SpamDisplayUI
     public SpamDisplayUI(String folderPath)
     {
         //Set up the background Grid object
-        _backgroundGrid = new BorderPane();
+        _backgroundPane = new BorderPane();
 
         //Set up the spam filter scroll pane
         _spamFilterPane = new Pane();
@@ -64,7 +57,7 @@ public class SpamDisplayUI
 		_spamFilterPane.getChildren().add(spamOrHamFileView.GetTable());
 
         //Add to background grid on top row
-		_backgroundGrid.setCenter(_spamFilterPane);
+		_backgroundPane.setCenter(_spamFilterPane);
 
         //Set up precision grid
         _labelGrid = new GridPane();
@@ -96,12 +89,12 @@ public class SpamDisplayUI
 		_labelGrid.add(_precisionText, 1, 1);
         
         //Add to background grid on bottom row
-        _backgroundGrid.setBottom(_labelGrid);
+        _backgroundPane.setBottom(_labelGrid);
     }
 
-	public BorderPane GetBackgroundGrid()
+	public BorderPane GetBackgroundPane()
     {
         //Get background grid
-        return _backgroundGrid;
+        return _backgroundPane;
     }
 }

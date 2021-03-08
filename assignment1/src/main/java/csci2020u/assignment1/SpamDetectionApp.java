@@ -12,15 +12,12 @@ public class SpamDetectionApp extends Application
 	public void start(Stage stage) throws Exception 
 	{
 		Pane pane = new Pane();
-		SpamDisplayUI secondScreen = new SpamDisplayUI("./Data");
-
-		//Update sizes
-		pane.getChildren().add(secondScreen.GetBackgroundGrid());
-		secondScreen.GetBackgroundGrid().prefWidthProperty().bind(pane.widthProperty());
-		secondScreen.GetBackgroundGrid().prefHeightProperty().bind(pane.heightProperty());
+		DirectorySelectionUI firstScreen = new DirectorySelectionUI(stage, pane);
+		// SpamDisplayUI secondScreen = new SpamDisplayUI("./Data");
 
 		//Root child is the pane so we can resize everything
-        Scene scene = new Scene(pane, 640, 480);
+        Scene scene = new Scene(pane, 640, 180);
+		stage.setResizable(false);
 		pane.prefWidthProperty().bind(scene.widthProperty());
 		pane.prefHeightProperty().bind(scene.heightProperty());
 
